@@ -1,0 +1,33 @@
+---
+title: "p8105_hw1_yl5221"
+author: "Yuhuan Lin"
+date: 2022-09-24
+output: github_document
+---
+
+## Problem 1
+```{r setup, include=FALSE}
+install.packages("palmerpenguins", repos = "http://cran.us.r-project.org")
+library(palmerpenguins)
+library(ggplot2)
+```
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+### Describing Penguins Data
+The penguins data set contains 344 rows and 8 columns, including species, island, bill_length, bill_depth, flipper_length, body_mass, sex, year. The mean of flipper_length is 200.9152.
+```{r}
+nrow(penguins)
+ncol(penguins)
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+### scatterplot 
+
+```{r}
+g <- ggplot(penguins, aes(x=bill_length_mm, y=flipper_length_mm, color=species)) + geom_point()
+ggsave("plot.png", g, device=png)
+```
+
