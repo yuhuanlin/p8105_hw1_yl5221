@@ -7,7 +7,6 @@ output: github_document
 
 ## Problem 1
 ```{r setup, include=FALSE}
-install.packages("palmerpenguins", repos = "http://cran.us.r-project.org")
 library(palmerpenguins)
 library(tidyverse)
 ```
